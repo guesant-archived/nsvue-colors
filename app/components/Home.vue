@@ -5,39 +5,29 @@
     </ActionBar>
 
     <div class="container" :lStyle="lStyle.flexCenter">
-      <div
-        class="card card1"
-        :class="contrastColor(cor1)"
-        :lStyle="lStyle.flexCenter"
-        :style="{ backgroundColor: `#${cor1}` }"
-      >
-        <p>Initial Color</p>
-        <TextField v-model="corInicial" :maxlength="7" @blur="mudouCor" />
-      </div>
+      <Card class="card1" title="Initial Color" :color="cor1">
+        <TextField v-model="corInicial" @blur="mudouCor" />
+      </Card>
 
-      <div
-        class="card card2"
-        :class="contrastColor(cor2)"
-        :lStyle="lStyle.flexCenter"
-        :style="{ backgroundColor: `#${cor2}` }"
-      >
-        <p>Simplified color</p>
-        <TextField :text="cor2" :autocorrect="false" />
-      </div>
+      <Card class="card2" title="Simplified Color" :color="cor2">
+        <TextField :text="cor2" />
+      </Card>
     </div>
   </Page>
 </template>
 
 <script>
+import Card from '@/components/UI/Card.vue';
 import shortenHexdColor from 'shorten-hexdcolor';
-
-import contrastColor from '@/tools/contrast-color';
 import parseColor from '@/tools/parse-color';
 
 export default {
+  components: {
+    Card
+  },
   data() {
     return {
-      corInicial: 'DADEDA',
+      corInicial: '',
       lStyle: {
         flexCenter: {
           display: 'flex',
@@ -57,10 +47,15 @@ export default {
     }
   },
   methods: {
-    contrastColor: contrastColor,
     mudouCor() {
       this.corInicial = parseColor(this.corInicial)
     },
+  },
+  beforeMount() {
+    const colors = ['ADF039', '16597B', 'A0165D', '1786E2'];
+    const choosedIndex = Math.round(Math.random() * colors.length - 1);
+
+    this.corInicial = colors[choosedIndex];
   }
 }
 </script>
@@ -70,31 +65,5 @@ export default {
 
 .container {
   width: 70%;
-  border-radius: 8;
-  overflow: hidden;
-}
-
-.card {
-  font-family: "Alice";
-
-  margin: 0;
-  width: 100%;
-  font-size: 24;
-  padding: 32;
-  box-shadow: 2 2 2 rgba(#000, 0.3); // not working
-
-  &.card1 {
-    border-radius: 8 8 0 0;
-  }
-  &.card2 {
-    border-radius: 0 0 8 8;
-  }
-
-  &.dark {
-    color: #111;
-  }
-  &.light {
-    color: #fff;
-  }
 }
 </style>
