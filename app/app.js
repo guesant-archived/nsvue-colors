@@ -1,17 +1,11 @@
-import Vue from "nativescript-vue";
-import FTNS from "@friendly-tnsvue/vue-plugin";
-import Home from "./components/Home";
+import Vue from 'nativescript-vue';
+import FTNS from '@friendly-tnsvue/vue-plugin';
+import Home from './components/Home';
 
 Vue.use(FTNS);
 
+Vue.config.silent = false;
+
 new Vue({
-
-    template: `
-        <Frame>
-            <Home />
-        </Frame>`,
-
-    components: {
-        Home
-    }
+  render: h => h('Frame', [h(Home)])
 }).$start();

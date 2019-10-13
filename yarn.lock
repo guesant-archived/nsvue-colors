@@ -4843,10 +4843,10 @@ shelljs@0.6.0:
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.6.0.tgz#ce1ed837b4b0e55b5ec3dab84251ab9dbdc0c7ec"
   integrity sha1-zh7YN7Sw5Vtew9q4QlGrnb3Ax+w=
 
-shorten-hexdcolor@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/shorten-hexdcolor/-/shorten-hexdcolor-0.2.1.tgz#6e098b3228ead17b2dca8732460024c82d051cef"
-  integrity sha512-K7Z7mLqbU2JlRVGGH/JZBqIHhkwj8kJQg8mhtvf9GSAvjc1lMakNY2kAkKtQF6qGbfuObSHodt3weAuBzgqsCQ==
+shorten-hexdcolor@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/shorten-hexdcolor/-/shorten-hexdcolor-0.3.0.tgz#0f35ecc8c404c3eaf98252c1846b713905810ad3"
+  integrity sha512-0Y5pV+E1K34hrfODU75WZqhpDuQwo1NF8gqgjMJYQ7nzE5gpl/DjFG7kmAA9sf3mQQTjeXSY00X5CUSqNjYLMw==
 
 signal-exit@^3.0.0:
   version "3.0.2"
